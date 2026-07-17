@@ -17,10 +17,10 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
   ];
 
   return (
-    <div className="w-64 h-screen bg-slate-900 text-slate-300 flex flex-col border-r border-slate-800">
+    <div className="w-64 h-screen bg-canvas text-body flex flex-col border-r border-canvas-soft">
       <div className="p-6 flex items-center gap-3">
-        <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white">O</div>
-        <h1 className="text-xl font-bold text-white tracking-tight">Ops-Insight</h1>
+        <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center font-bold text-white">O</div>
+        <h1 className="text-xl font-medium text-ink tracking-tight">Ops-Insight</h1>
       </div>
       
       <nav className="flex-1 px-4 py-4 space-y-1">
@@ -31,15 +31,15 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
               key={item.id}
               onClick={() => setActiveTab(item.id)}
               className={cn(
-                "w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group",
+                "w-full flex items-center gap-3 px-4 py-3 rounded-md transition-all duration-200 group",
                 activeTab === item.id 
-                  ? "bg-blue-600/10 text-blue-400 border border-blue-600/20 shadow-[0_0_15px_rgba(37,99,235,0.1)]" 
-                  : "hover:bg-slate-800 hover:text-white"
+                  ? "bg-canvas-soft text-ink border border-ink/5 shadow-sm" 
+                  : "hover:bg-canvas-soft/50 hover:text-ink"
               )}
             >
               <Icon size={20} className={cn(
                 "transition-colors",
-                activeTab === item.id ? "text-blue-400" : "text-slate-400 group-hover:text-white"
+                activeTab === item.id ? "text-primary" : "text-body-mid group-hover:text-ink"
               )} />
               <span className="font-medium text-sm">{item.label}</span>
             </button>
@@ -48,10 +48,10 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
       </nav>
       
       <div className="p-4 mt-auto">
-        <div className="bg-slate-800/50 rounded-2xl p-4 border border-slate-700/50">
-          <p className="text-xs text-slate-500 mb-1">Signed in as</p>
-          <p className="text-sm font-semibold text-slate-200">김한화 (신입사원)</p>
-          <p className="text-[10px] text-blue-500 font-mono mt-1 uppercase tracking-wider">Production Support</p>
+        <div className="bg-canvas-soft rounded-md p-4 border border-ink/5">
+          <p className="text-[10px] font-medium text-body-mid uppercase tracking-widest mb-1">Signed in as</p>
+          <p className="text-sm font-semibold text-ink">김한화 (신입사원)</p>
+          <p className="text-[10px] text-primary font-bold mt-1 uppercase tracking-wider">Production Support</p>
         </div>
       </div>
     </div>
