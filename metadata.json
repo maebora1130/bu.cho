@@ -1,0 +1,6 @@
+{
+  "name": "Ops-Insight Pilot",
+  "description": "생산관리 신입사원을 위한 공정 가시성 및 업무 자동화 플랫폼. ERP/MES 통합 대시보드와 AI 기반 이슈 분석을 제공합니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
